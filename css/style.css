@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+:root {
+  --diamond-size: 40px;
+  --width-length: 3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 48px;
+  cursor: none;
+  gap: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #f8f8f8;
+  color: #aaa;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.wrapper {
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+td {
+  width: calc(var(--diamond-size) + 6px);
+  height: calc(var(--diamond-size) + 6px);
+  background: #eee;
+  border-radius: 4px;
+  border: 2px solid #f8f8f8;
+}
+
+.points-wrapper {
+  background: #eee;
+  padding: 8px;
+  max-width: calc(var(--diamond-size) * var(--width-length) + 16px);
+  line-height: 0;
+  border-radius: 4px;
+}
+
+.diamond {
+  display: inline-block;
+  width: var(--diamond-size) ;
+  height: var(--diamond-size);
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  user-select: none;
+  border-top: calc(var(--diamond-size) / 2 - var(--diamond-size) / 4) solid rgb(255 255 255 / .5);
+  border-right: calc(var(--diamond-size) / 2 - var(--diamond-size) / 4) solid rgb(255 255 255 / .3);
+  border-bottom: calc(var(--diamond-size) / 2 - var(--diamond-size) / 4) solid rgb(0 0 0 / .3);
+  border-left: calc(var(--diamond-size) / 2 - var(--diamond-size) / 4) solid rgb(0 0 0 / .1);
+  position: relative;
+}
+
+.diamond::after {
+  display: inline-block;
+  content: "";
+  background: rgb(255 255 255 / .8);
+  width: 4px;
+  height: 4px;
+  margin-left: 17px;
+  margin-top: -2px;
+  transform: rotate(45deg);
+}
+
+.item-sound {
+  margin: 0;
+  padding: 0;
+}
+
+.stick {
+  position: fixed;
+  top: 80vh;
+  left: 80vw;
+  width: 24px;
+  transform: rotate(-37deg);
+  user-select: none;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.stick > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: -16px 16px 16px rgba(0, 0, 0, .1);
+}
+
+.s-saki {
+  width: 14px;
+  height: 60px;
+  top: 0;
+  border-radius: 4px 4px 0 0;
+  background: rgb(204,204,204);
+  background: linear-gradient(90deg, rgba(190,190,190,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 65%, rgba(190,190,190,1) 100%);
+  border: 1px solid #aaa;
+}
+
+.s-tunagi-1 {
+  width: 16px;
+  height: 16px;
+  background: rgb(250 250 250 / .7);
+  border: 1px solid #aaa;
+  top: 9px;
+  border-radius: 4px 4px 0 0;
+}
+.s-tunagi-2 {
+  width: 20px;
+  height: 20px;
+  background: rgb(250 250 250 / .7);
+  border: 1px solid #aaa;
+  top: 24px;
+  border-radius: 4px 4px 0 0;
+}
+
+.s-stick-body {
+  border: 1px solid #aaa;
+  width: 24px;
+  height: 240px;
+  top: 43px;
+  border-radius: 4px 4px 8px 8px;
+  background: rgb(204,204,204);
+  background: linear-gradient(90deg, rgba(190,190,190,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 65%, rgba(190,190,190,1) 100%);
+}
+
+.btn {
+  all: unset;
+  box-sizing: border-box;
+  padding: 8px;
+  width: calc(var(--diamond-size) * var(--width-length) + 16px);
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #eee;
+  border-radius: 999px;
+  user-select: none;
+}
+
+.btn:hover {
+  opacity: .6;
+}
